@@ -1,0 +1,76 @@
+<div class="page-title">
+  <h4>
+    Yesterday overview ({{yesterday | date}})
+    <i class="material-icons black-text pointer" (click)="openInfo()">info_outline</i>
+  </h4>
+</div>
+
+<div
+  class="row"
+  *ngIf="data$ | async as data; else loader"
+>
+  <div class="col s12 l6">
+    <div class="card light-blue lighten-2 white-text">
+      <div class="card-content">
+        <span class="card-title">Income:</span>
+        <h3>{{data.income.yesterday}} $</h3>
+
+        <h3
+          class="m0 mb1"
+          [ngClass]="{
+            'green-text text-darken-2': data.income.isHigher,
+            'red-text': !data.income.isHigher
+          }"
+        >
+          <i class="material-icons">
+            {{data.income.isHigher ? 'arrow_upward' : 'arrow_downward'}}
+          </i>
+          {{data.income.percent}}
+        </h3>
+
+        <p>Yesterday business income was {{data.income.percent}}% {{data.income.isHigher ? 'higher' : 'lower'}} by {{data.income.compare}} $ </p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="col s12 l6">
+
+    <div class="card orange lighten-2 white-text">
+      <div class="card-content">
+        <span class="card-title">Orders:</span>
+        <h3>{{data.orders.yesterday}} orders</h3>
+        <h3
+          class="m0 mb1"
+          [ngClass]="{
+            'green-text text-darken-2': data.orders.isHigher,
+            'red-text': !data.orders.isHigher
+          }"
+        >
+          <i class="material-icons">
+            {{data.orders.isHigher ? 'arrow_upward' : 'arrow_downward'}}
+          </i>
+          {{data.orders.percent}}
+        </h3>
+        <p>Yesterday orders quantity was {{data.orders.percent}}% {{data.orders.isHigher ? 'higher' : 'lower'}} by {{data.orders.compare}} orders </p>
+      </div>
+    </div>
+
+  </div>
+
+
+</div>
+
+
+
+<ng-template #loader>
+  <app-loader></app-loader>
+</ng-template>
+
+
+<div class="tap-target" data-target="menu" #tapTarget>
+  <div class="tap-target-content">
+    <h5>What is this page for?</h5>
+    <p>Overview page shows sales dynamics for yesterday. You can see how is your business going by checking the comparison between yesterday and average results.</p>
+  </div>
+</div>
