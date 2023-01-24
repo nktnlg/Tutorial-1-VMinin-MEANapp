@@ -3,7 +3,6 @@ import {PositionsService} from "../../../shared/services/positions.service";
 import {Position} from "../../../shared/interfaces";
 import {MaterialInstance, MaterialService} from "../../../shared/classes/material.service";
 import {UntypedFormGroup, UntypedFormControl, Validators} from "@angular/forms";
-import {error} from "@angular/compiler/src/util";
 
 @Component({
   selector: 'app-positions-form',
