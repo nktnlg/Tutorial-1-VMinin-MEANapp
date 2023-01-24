@@ -1,6 +1,6 @@
 import {Component, ElementRef, OnInit, ViewChild} from '@angular/core';
 import {ActivatedRoute, Params, Router} from "@angular/router";
-import {FormControl, FormGroup, Validators} from "@angular/forms";
+import {UntypedFormControl, UntypedFormGroup, Validators} from "@angular/forms";
 import {CategoriesService} from "../../shared/services/categories.service";
 import {switchMap} from "rxjs/operators";
 import {of} from "rxjs";
@@ -16,7 +16,7 @@ export class CategoriesFormComponent implements OnInit {
 
   @ViewChild('input') inputRef: ElementRef
 
-  form: FormGroup
+  form: UntypedFormGroup
   image: File
   imagePreview: any
   isNew = true
@@ -30,8 +30,8 @@ export class CategoriesFormComponent implements OnInit {
   ngOnInit(): void {
 
 
-    this.form = new FormGroup({
-      name: new FormControl(null, Validators.required)
+    this.form = new UntypedFormGroup({
+      name: new UntypedFormControl(null, Validators.required)
     })
 
     this.form.disable()

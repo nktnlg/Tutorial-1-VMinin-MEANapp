@@ -2,8 +2,7 @@ import {AfterViewInit, Component, ElementRef, Input, OnDestroy, OnInit, ViewChil
 import {PositionsService} from "../../../shared/services/positions.service";
 import {Position} from "../../../shared/interfaces";
 import {MaterialInstance, MaterialService} from "../../../shared/classes/material.service";
-import {FormGroup, FormControl, Validators} from "@angular/forms";
-import {error} from "@angular/compiler/src/util";
+import {UntypedFormGroup, UntypedFormControl, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-positions-form',
@@ -18,14 +17,14 @@ export class PositionsFormComponent implements OnInit, AfterViewInit, OnDestroy 
   loading = false
   positionId = null
   modal: MaterialInstance
-  form: FormGroup
+  form: UntypedFormGroup
 
   constructor(private positionsService: PositionsService) { }
 
   ngOnInit(): void {
-    this.form = new FormGroup({
-      name: new FormControl(null, Validators.required),
-      cost: new FormControl(1, [Validators.required, Validators.min(1)])
+    this.form = new UntypedFormGroup({
+      name: new UntypedFormControl(null, Validators.required),
+      cost: new UntypedFormControl(1, [Validators.required, Validators.min(1)])
     })
 
     this.loading = true
