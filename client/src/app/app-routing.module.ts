@@ -1,18 +1,18 @@
 import {NgModule} from "@angular/core";
 import {RouterModule, Routes} from "@angular/router";
-import {LoginPageComponent} from "./login-page/login-page.component";
-import {AuthLayoutComponent} from "./shared/layouts/auth-layout/auth-layout.component";
-import {SiteLayoutComponent} from "./shared/layouts/site-layout/site-layout.component";
-import {RegisterPageComponent} from "./register-page/register-page.component";
+import {LoginPageComponent} from "./auth-layout/login-page/login-page.component";
+import {AuthLayoutComponent} from "./auth-layout/auth-layout.component";
+import {SiteLayoutComponent} from "./site-layout/site-layout.component";
+import {RegisterPageComponent} from "./auth-layout/register-page/register-page.component";
 import {AuthGuard} from "./shared/classes/auth.guard";
-import {OverviewPageComponent} from "./overview-page/overview-page.component";
-import {AnalyticsPageComponent} from "./analytics-page/analytics-page.component";
-import {HistoryPageComponent} from "./history-page/history-page.component";
-import {OrderPageComponent} from "./order-page/order-page.component";
-import {CategoriesPageComponent} from "./categories-page/categories-page.component";
-import {CategoriesFormComponent} from "./categories-page/categories-form/categories-form.component";
-import {OrderCategoriesComponent} from "./order-page/order-categories/order-categories.component";
-import {OrderPositionsComponent} from "./order-page/order-positions/order-positions.component";
+import {OverviewPageComponent} from "./site-layout/overview-page/overview-page.component";
+import {AnalyticsPageComponent} from "./site-layout/analytics-page/analytics-page.component";
+import {HistoryPageComponent} from "./site-layout/history-page/history-page.component";
+import {OrderPageComponent} from "./site-layout/order-page/order-page.component";
+import {CategoriesPageComponent} from "./site-layout/categories-page/categories-page.component";
+import {CategoriesFormComponent} from "./site-layout/categories-page/categories-form/categories-form.component";
+import {OrderCategoriesComponent} from "./site-layout/order-page/order-categories/order-categories.component";
+import {OrderPositionsComponent} from "./site-layout/order-page/order-positions/order-positions.component";
 
 const routes: Routes = [
   {
